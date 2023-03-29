@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 const Register = () => {
   return (
@@ -82,13 +83,13 @@ const Register = () => {
                 Register
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Have an account yet?{' '}
-                <a
-                  href="#"
+                Have an account?{' '}
+                <Link
+                  href="/register"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign In
-                </a>
+                </Link>
               </p>
             </form>
           </div>
