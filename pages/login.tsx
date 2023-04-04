@@ -1,9 +1,19 @@
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
+interface UserData {
+  email: string
+  password: string
+}
+
 const Login = (): JSX.Element => {
-  const [data, setData] = useState({})
+  const router = useRouter()
+  const [data, setData] = useState<UserData>({
+    email: '',
+    password: '',
+  })
 
   const updateData = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({
@@ -14,6 +24,9 @@ const Login = (): JSX.Element => {
 
   const onSubmit = (e: React.FormEvent) => {
     console.log(data)
+    if (data.email === 'test@gatech.edu' && data.password === 'testpassword') {
+      router.push('/patients')
+    }
     e.preventDefault()
   }
 
@@ -39,7 +52,7 @@ const Login = (): JSX.Element => {
                 <TextInput
                   id="email"
                   type="email"
-                  placeholder="name@flowbite.com"
+                  placeholder="name@gatech.edu"
                   onChange={updateData}
                   required={true}
                   shadow={true}
