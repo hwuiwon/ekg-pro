@@ -1,14 +1,10 @@
-import { Button, Checkbox, Label, TextInput } from 'flowbite-react'
+import { Button, Label, TextInput } from 'flowbite-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { UserData } from './login'
 
-export interface UserData {
-  email: string
-  password: string
-}
-
-const Login = (): JSX.Element => {
+const Register = (): JSX.Element => {
   const router = useRouter()
   const [data, setData] = useState<UserData>({
     email: '',
@@ -39,7 +35,7 @@ const Login = (): JSX.Element => {
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign in to your account
+              Create your account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={onSubmit}>
               <div>
@@ -74,40 +70,20 @@ const Login = (): JSX.Element => {
                   shadow={true}
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-start">
-                  <div className="flex items-center h-5">
-                    <Checkbox id="remember" />
-                  </div>
-                  <div className="ml-3 text-sm">
-                    <Label
-                      id="remember-label"
-                      className="text-gray-500 dark:text-gray-300"
-                    >
-                      Remember me
-                    </Label>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Forgot password?
-                </a>
-              </div>
+
               <Button
                 type="submit"
                 className="w-full text-white bg-primary-600 "
               >
-                Sign in
+                Sign Up
               </Button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet?{' '}
+                Have an account?{' '}
                 <Link
-                  href="/register"
+                  href="/login"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
-                  Sign Up
+                  Sign In
                 </Link>
               </p>
             </form>
@@ -118,4 +94,4 @@ const Login = (): JSX.Element => {
   )
 }
 
-export default Login
+export default Register
