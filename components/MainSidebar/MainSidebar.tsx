@@ -1,4 +1,5 @@
 import { Sidebar } from 'flowbite-react'
+import Link from 'next/link'
 import {
   HiBriefcase,
   HiChartPie,
@@ -15,14 +16,11 @@ const MainSidebar: React.FC = () => {
       aria-label="Sidebar"
     >
       <div className="h-full px-3 py-4 overflow-y-auto dark:bg-gray-800">
-        <a
-          href="https://flowbite.com/"
-          className="flex items-center pl-2.5 mb-5"
-        >
+        <Link href="/login" className="flex items-center pl-2.5 mb-5">
           <span className="self-center text-xl font-semibold whitespace-nowrap text-primary-600 dark:text-white">
             EKG Pro
           </span>
-        </a>
+        </Link>
 
         <Sidebar.Items className="space-y-2 font-medium">
           <Sidebar.ItemGroup>
