@@ -23,7 +23,7 @@ const Login = (): JSX.Element => {
   }
 
   const onSubmit = (e: React.FormEvent) => {
-    console.log(data)
+    // console.log(data)
     if (data.email === 'test@gatech.edu' && data.password === 'testpassword') {
       router.push('/patients')
     }
