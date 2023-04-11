@@ -1,4 +1,4 @@
-import { PatientData } from '@/pages/patients'
+import { PatientData } from '../../pages/patients'
 import { Table } from 'flowbite-react'
 import { useRouter } from 'next/router'
 

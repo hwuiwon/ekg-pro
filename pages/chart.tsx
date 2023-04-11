@@ -10,14 +10,27 @@ interface ChartProps {
   router: any
 }
 
-const Chart: React.FC = (props: ChartProps) => {
-  const [data, setData] = useState<PatientData>()
+const Chart: React.FC<ChartProps> = (props: ChartProps) => {
+  const [data, setData] = useState<PatientData | null>()
 
   useEffect(() => {
-    console.log('In Chart: ')
-    const patientData: PatientData = JSON.parse(props.router.query.data)
-    setData(patientData)
+    if (!(props.router.query.data == null)) {
+      setData(JSON.parse(props.router.query.data))
+    }
   }, [props.router.query])
+
+  useEffect(() => {
+    const localData = window.localStorage.getItem('data')
+    // catches null and undefined
+    if (!(localData == null) && localData != 'undefined') {
+      console.log(localData)
+      setData(JSON.parse(localData))
+    }
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('data', JSON.stringify(data))
+  }, [data])
 
   return (
     <>
@@ -42,7 +55,6 @@ const Chart: React.FC = (props: ChartProps) => {
             </Table.Row>
           </Table>
         )}
-        <p> test</p>
       </div>
     </>
   )
