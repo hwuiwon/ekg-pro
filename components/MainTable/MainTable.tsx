@@ -16,8 +16,8 @@ const MainTable: React.FC<TableProps> = (props) => {
     console.log(data)
     console.log('Patient Click: ' + data.name)
     router.push(
-      { pathname: '/chart', query: { data: JSON.stringify(data) } },
-      '/chart'
+      { pathname: '/analysis', query: { data: JSON.stringify(data) } },
+      '/analysis'
     )
   }
 

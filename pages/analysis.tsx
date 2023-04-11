@@ -4,13 +4,14 @@ import MainSidebar from '@/components/MainSidebar/MainSidebar'
 import { PatientData } from '@/pages/patients'
 import { Table } from 'flowbite-react'
 import Title from '@/components/Title/title'
+import Chart from '@/components/Chart/Chart'
 
-interface ChartProps {
+interface AnalysisProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   router: any
 }
 
-const Chart: React.FC<ChartProps> = (props: ChartProps) => {
+const Analysis: React.FC<AnalysisProps> = (props: AnalysisProps) => {
   const [data, setData] = useState<PatientData | null>()
 
   useEffect(() => {
@@ -55,9 +56,10 @@ const Chart: React.FC<ChartProps> = (props: ChartProps) => {
             </Table.Row>
           </Table>
         )}
+        <Chart />
       </div>
     </>
   )
 }
 
-export default withRouter(Chart)
+export default withRouter(Analysis)
