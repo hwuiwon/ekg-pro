@@ -1,21 +1,50 @@
-import { useEffect } from 'react'
-import { useRouter, withRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import { withRouter } from 'next/router'
+import MainSidebar from '@/components/MainSidebar/MainSidebar'
+import { PatientData } from '@/pages/patients'
+import { Table } from 'flowbite-react'
+import Title from '@/components/Title/title'
 
 interface ChartProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   router: any
 }
 
-const Chart: React.FC = (props) => {
+const Chart: React.FC = (props: ChartProps) => {
+  const [data, setData] = useState<PatientData>()
+
   useEffect(() => {
     console.log('In Chart: ')
-    console.log(props.router.query.id)
+    const patientData: PatientData = JSON.parse(props.router.query.data)
+    setData(patientData)
   }, [props.router.query])
 
   return (
-    <div>
-      <p>test</p>
-    </div>
+    <>
+      <MainSidebar />
+      <div className="p-4 sm:ml-64 bg-slate-200 h-screen">
+        <Title title={'EKG Analysis'} />
+        {data && (
+          <Table striped={true}>
+            <Table.Row
+              className="bg-white dark:border-gray-700 dark:bg-gray-800"
+              key={data.date + data.id}
+            >
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                {data.name}
+              </Table.Cell>
+              <Table.Cell>{data.id}</Table.Cell>
+              <Table.Cell>{data.date}</Table.Cell>
+              <Table.Cell>{data.doctor}</Table.Cell>
+              <Table.Cell>{data.room}</Table.Cell>
+              <Table.Cell>{data.team}</Table.Cell>
+              <Table.Cell>{data.diagnosis}</Table.Cell>
+            </Table.Row>
+          </Table>
+        )}
+        <p> test</p>
+      </div>
+    </>
   )
 }
 

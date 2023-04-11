@@ -1,6 +1,7 @@
 import MainSidebar from '@/components/MainSidebar/MainSidebar'
 import MainTable from '@/components/MainTable/MainTable'
 import Searchbar from '@/components/Searchbar/Searchbar'
+import Title from '@/components/Title/title'
 
 export interface PatientData {
   name: string
@@ -39,9 +40,7 @@ const Patients = (): JSX.Element => {
       <MainSidebar />
       <div className="p-4 sm:ml-64 bg-slate-200 h-screen">
         <Searchbar />
-        <p className="text-3xl text-gray-900 dark:text-white font-semibold mt-7 mb-5">
-          Patients
-        </p>
+        <Title title={'Patients'} />
         <MainTable columns={columns} tableData={tableData} />
       </div>
     </>

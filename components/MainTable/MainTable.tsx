@@ -12,9 +12,13 @@ const MainTable: React.FC<TableProps> = (props) => {
   const navButtonStyle =
     'px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
 
-  const onPatientClick = (id: string) => {
-    console.log('Patient Click: ' + id)
-    router.push({ pathname: '/chart', query: { id: id } })
+  const onPatientClick = (data: PatientData) => {
+    console.log(data)
+    console.log('Patient Click: ' + data.name)
+    router.push(
+      { pathname: '/chart', query: { data: JSON.stringify(data) } },
+      '/chart'
+    )
   }
 
   return (
@@ -33,7 +37,7 @@ const MainTable: React.FC<TableProps> = (props) => {
                 key={data.date + data.id}
               >
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                  <a href={'#'} onClick={() => onPatientClick(data.id)}>
+                  <a href={'#'} onClick={() => onPatientClick(data)}>
                     {data.name}
                   </a>
                 </Table.Cell>
