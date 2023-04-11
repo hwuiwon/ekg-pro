@@ -28,6 +28,7 @@ const Login = (): JSX.Element => {
       router.push('/patients')
     }
     e.preventDefault()
+    
   }
 
   return (
