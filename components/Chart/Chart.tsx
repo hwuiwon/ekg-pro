@@ -1,5 +1,7 @@
 import React, { useEffect, useReducer, useState } from 'react'
-import testPhoto from '../../testEKGImage.jpeg'
+import EKG1 from '../../testImages/fullEKG1.jpeg'
+import EKG2 from '../../testImages/fullEKG2.jpeg'
+import { StaticImageData } from 'next/image'
 
 interface LayerType {
   id: string
@@ -61,8 +63,9 @@ interface ChartListProps {
   layers: Array<LayerType>
 }
 
-interface ChartObjProps {
-  layerId: string
+interface SegmentObjProps {
+  selectedLayers: Array<LayerType>
+  segment: string
 }
 
 const LayersList = (props: LayersListProps) => {
@@ -106,17 +109,19 @@ const ChartList = (props: ChartListProps) => {
   const dummyChartComponentData = [
     { name: 'Segment 1', display: true },
     { name: 'Segment 2', display: true },
-    { name: 'Segment 3', display: true },
+    { name: 'Segment 3', display: false },
   ]
 
   const chartComponentList: Array<JSX.Element> = []
   let i = 0
   while (i < 3) {
+    if (dummyChartComponentData[i].display) {
     chartComponentList.push(
       <div key={dummyChartComponentData[i].name} className="ChartContainer">
-        <ChartObj layerId={dummyChartComponentData[i].name} />
+        <SegmentObj selectedLayers={props.layers} segment={dummyChartComponentData[i].name} />
       </div>
     )
+    }
     i += 1
   }
 
@@ -127,14 +132,31 @@ const ChartList = (props: ChartListProps) => {
   )
 }
 
-const ChartObj = ({ layerId }: ChartObjProps) => {
+const SegmentObj = ({ selectedLayers, segment }: SegmentObjProps) => {
   // const [state, dispatch] = useReducer(oldState, action) // THIS IS FOR PANNING/ZOOMING
   // zander is so sexy 🤤
+  // Folder of images is being weird so just manually doing it untill API is ready.
+  var images = [
+    {id: selectedLayers[0].id, path: EKG1},
+    {id: selectedLayers[1].id, path: EKG2},
+    {id: selectedLayers[2].id, path: EKG1}
+  ]
+
+  const layers: Array<JSX.Element> = []
+  for (let i = 0; i < selectedLayers.length; i++) {
+    if (selectedLayers[i].selected) {
+      layers.push(
+        <view key={i}>
+            <img src={images[i].path.src} className="SegmentImg"/>
+        </view>
+      )
+    }
+  }
 
   return (
-    <div className="ChartObj">
-      <p className="Subheading">{layerId}</p>
-      <img src={testPhoto.src} />
+    <div className="SegmentObj">
+      <p className="Subheading">{segment}</p>
+      {layers}
     </div>
   )
 }

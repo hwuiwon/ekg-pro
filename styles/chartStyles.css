@@ -44,7 +44,16 @@
   border-radius: 10px;
 }
 
-.ChartObj {
+.SegmentObj {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
   display: flex;
   flex-direction: column;
+}
+
+.SegmentImg {
+  position: absolute;
+  top: 1;
+  opacity: 0.5;
 }
