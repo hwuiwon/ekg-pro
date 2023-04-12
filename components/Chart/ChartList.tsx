@@ -1,5 +1,5 @@
 import { LayerType } from './Chart'
-import ChartObject from './ChartObject'
+import SegmentObject from './SegmentObject'
 
 interface ChartListProps {
   layers: Array<LayerType>
@@ -19,7 +19,10 @@ const ChartList = (props: ChartListProps) => {
   while (i < 3) {
     chartComponentList.push(
       <div key={dummyChartComponentData[i].name} className="ChartContainer">
-        <ChartObject layerId={dummyChartComponentData[i].name} />
+        <SegmentObject
+          selectedLayers={props.layers}
+          segment={dummyChartComponentData[i].name}
+        />
       </div>
     )
     i += 1

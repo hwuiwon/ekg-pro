@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import ChartList from './ChartList'
 import LayersList from './Layers'
 
