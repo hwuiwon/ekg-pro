@@ -1,2 +1,37 @@
-.Layers {
+.AnalysisContianer {
+  width: 100%;
+  margin: 25px 0px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+}
+
+.LayerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: white;
+  flex: 1;
+  padding: 10px;
+}
+
+.Layer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.LayerText {
+  /* background-color: red; */
+  width: 100%;
+}
+
+.LayerButton {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.ChartContianer {
+  flex: 3;
 }
