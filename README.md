@@ -12,16 +12,10 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Then, in a seperate terminal, enter the virtual environment containing the Django server:
+Then, in a seperate terminal, run the Django server in order to have the backend connection:
 
 ```bash
 cd backend
-source .venv/bin/activate
-```
-
-Then, in the same terminal, run the Django server in order to have the backend connection:
-
-```bash
 python manage.py runserver
 ```
 
