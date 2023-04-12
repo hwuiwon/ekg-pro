@@ -24,7 +24,6 @@ const Analysis: React.FC<AnalysisProps> = (props: AnalysisProps) => {
     const localData = window.localStorage.getItem('data')
     // catches null and undefined
     if (!(localData == null) && localData != 'undefined') {
-      console.log(localData)
       setData(JSON.parse(localData))
     }
   }, [])
