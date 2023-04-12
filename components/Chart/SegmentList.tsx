@@ -5,7 +5,7 @@ interface ChartListProps {
   layers: Array<LayerType>
 }
 
-const ChartList = (props: ChartListProps) => {
+const SegmentList = (props: ChartListProps) => {
   // TODO make this interact with "toggle chart components" so we display the right components
   // of the EKG
   const dummyChartComponentData = [
@@ -18,7 +18,7 @@ const ChartList = (props: ChartListProps) => {
   let i = 0
   while (i < 3) {
     chartComponentList.push(
-      <div key={dummyChartComponentData[i].name} className="ChartContainer">
+      <div key={dummyChartComponentData[i].name} className="SegmentContainer">
         <SegmentObject
           selectedLayers={props.layers}
           segment={dummyChartComponentData[i].name}
@@ -28,11 +28,7 @@ const ChartList = (props: ChartListProps) => {
     i += 1
   }
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      {chartComponentList}
-    </div>
-  )
+  return <div className="SegmentListContainer">{chartComponentList}</div>
 }
 
-export default ChartList
+export default SegmentList

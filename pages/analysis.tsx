@@ -35,7 +35,8 @@ const Analysis: React.FC<AnalysisProps> = (props: AnalysisProps) => {
   return (
     <>
       <MainSidebar />
-      <div className="p-4 sm:ml-64 bg-slate-200 h-screen">
+      {/* <div className="p-4 sm:ml-64 bg-slate-200 h-screen"> */}
+      <div className="MainScreen">
         <Title title={'EKG Analysis'} />
         {data && (
           <Table striped={true}>

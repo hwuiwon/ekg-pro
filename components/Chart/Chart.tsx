@@ -1,5 +1,5 @@
-import React, { useEffect, useReducer, useState } from 'react'
-import ChartList from './ChartList'
+import React, { useState } from 'react'
+import SegmentList from './SegmentList'
 import LayersList from './Layers'
 
 export interface LayerType {
@@ -47,9 +47,7 @@ const Chart = () => {
         </p>
         <LayersList layers={layers} onSelect={handleLayerSelect} />
       </div>
-      <div className="ChartContianer">
-        <ChartList layers={layers} />
-      </div>
+      <SegmentList layers={layers} />
     </div>
   )
 }

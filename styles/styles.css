@@ -1,3 +1,12 @@
+.MainScreen {
+  background-color: rgb(226 232 240);
+  margin-left: 16rem;
+  min-height: 100vh;
+  height: 100%;
+  padding: 1rem;
+  /* "p-4 sm:ml-64" */
+}
+
 .Subheading {
   /* font-family: 'Lato'; */
   font-style: normal;

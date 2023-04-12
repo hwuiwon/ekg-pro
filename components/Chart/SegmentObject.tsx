@@ -10,6 +10,7 @@ interface SegmentObjProps {
 
 const SegmentObject = ({ selectedLayers, segment }: SegmentObjProps) => {
   // const [state, dispatch] = useReducer(oldState, action) // THIS IS FOR PANNING/ZOOMING
+  // import {useReducer} from 'react'
   // zander is so sexy 🤤
   // Folder of images is being weird so just manually doing it untill API is ready.
   const images = [

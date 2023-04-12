@@ -38,7 +38,7 @@ const Patients = (): JSX.Element => {
   return (
     <>
       <MainSidebar />
-      <div className="p-4 sm:ml-64 bg-slate-200 h-screen">
+      <div className="MainScreen">
         <Searchbar />
         <Title title={'Patients'} />
         <MainTable columns={columns} tableData={tableData} />
