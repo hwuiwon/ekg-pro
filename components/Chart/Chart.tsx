@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useState } from 'react'
 import ChartList from './ChartList'
 import LayersList from './Layers'
 
@@ -18,20 +18,23 @@ export interface LayerType {
 //   selected: boolean
 // }
 
+const dummyData: Array<LayerType> = [
+  { id: '000000', date: 'April 12th, 2023', selected: true },
+  { id: '000001', date: 'March 15th, 2023', selected: true },
+  { id: '000002', date: 'February 3rd, 2023', selected: false },
+]
+
 const Chart = () => {
-  const dummyData: Array<LayerType> = [
-    { id: '000000', date: 'April 12th, 2023', selected: true },
-    { id: '000001', date: 'March 15th, 2023', selected: true },
-    { id: '000002', date: 'February 3rd, 2023', selected: false },
-  ]
   const [layers, setLayers] = useState(dummyData)
 
   const handleLayerSelect = (id: string) => {
-    const tempLayers = layers
-    for (let i = 0; i++; i < tempLayers.length) {
+    const tempLayers = [...layers]
+    let i = 0
+    while (i < tempLayers.length) {
       if (tempLayers[i].id == id) {
         tempLayers[i].selected = !tempLayers[i].selected
       }
+      i += 1
     }
     setLayers(tempLayers)
   }

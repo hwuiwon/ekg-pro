@@ -52,7 +52,9 @@ const ChartObj = ({ layerId }: ChartObjProps) => {
 
   return (
     <div className="ChartObj">
-      <p className="Subheading">{layerId}</p>
+      <p className="Subheading" style={{ margin: '10px' }}>
+        {layerId}
+      </p>
       <img src={testPhoto.src} />
     </div>
   )
