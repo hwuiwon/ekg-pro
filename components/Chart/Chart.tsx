@@ -19,9 +19,14 @@ export interface LayerType {
 // }
 
 const dummyData: Array<LayerType> = [
-  { id: '000000', date: 'April 12th, 2023', selected: true },
-  { id: '000001', date: 'March 15th, 2023', selected: true },
-  { id: '000002', date: 'February 3rd, 2023', selected: false },
+  { id: '000000', date: 'February 3rd, 2023', selected: true },
+  { id: '000001', date: 'March 15th, 2023', selected: false },
+  { id: '000002', date: 'April 12th, 2023', selected: false },
+
+  //former order of the charts
+  // { id: '000000', date: 'April 12th, 2023', selected: false },
+  // { id: '000001', date: 'March 15th, 2023', selected: false },
+  // { id: '000002', date: 'February 3rd, 2023', selected: true },
 ]
 
 const Chart = () => {
