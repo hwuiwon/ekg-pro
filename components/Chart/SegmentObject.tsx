@@ -17,6 +17,7 @@ const SegmentObject = ({ selectedLayers, segment }: SegmentObjProps) => {
     { id: selectedLayers[0].id, path: EKG1 },
     { id: selectedLayers[1].id, path: EKG2 },
     { id: selectedLayers[2].id, path: EKG1 },
+    { id: selectedLayers[3].id, path: EKG2 },
   ]
 
   const layers: Array<JSX.Element> = []
