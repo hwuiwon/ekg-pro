@@ -28,6 +28,11 @@ python manage.py runserver
 
 The Django connection will be on [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+## When new packages are installed in Django, update the package dependencies by the following:
+```bash
+pip freeze > requirements.txt
+```
+
 ## Rest of Next.js project README documentation
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
