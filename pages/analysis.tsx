@@ -5,6 +5,7 @@ import { PatientData } from '@/pages/patients'
 import { Table } from 'flowbite-react'
 import Title from '@/components/Title/title'
 import Chart from '@/components/Chart/Chart'
+import Zander from '../../assets/testImages/zanderUpdated.jpeg'
 
 interface AnalysisProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,6 +50,7 @@ const Analysis: React.FC<AnalysisProps> = (props: AnalysisProps) => {
               </Table.Cell>
               <Table.Cell>{data.id}</Table.Cell>
               <Table.Cell>{data.date}</Table.Cell>
+              <Table.Cell>{data.time}</Table.Cell>
               <Table.Cell>{data.doctor}</Table.Cell>
               <Table.Cell>{data.room}</Table.Cell>
               <Table.Cell>{data.team}</Table.Cell>
