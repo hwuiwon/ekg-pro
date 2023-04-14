@@ -1,6 +1,7 @@
 import { LayerType } from './Chart'
 import EKG1 from '../../assets/testImages/fullEKG1.jpeg'
 import EKG2 from '../../assets/testImages/fullEKG2.jpeg'
+import Zander from '../../assets/testImages/zander.jpeg'
 // import { StaticImageData } from 'next/image'
 
 interface SegmentObjProps {
@@ -17,6 +18,7 @@ const SegmentObject = ({ selectedLayers, segment }: SegmentObjProps) => {
     { id: selectedLayers[0].id, path: EKG1 },
     { id: selectedLayers[1].id, path: EKG2 },
     { id: selectedLayers[2].id, path: EKG1 },
+    { id: selectedLayers[3].id, path: EKG2 },
   ]
 
   const layers: Array<JSX.Element> = []

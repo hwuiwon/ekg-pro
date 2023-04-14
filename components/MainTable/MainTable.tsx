@@ -1,6 +1,9 @@
 import { PatientData } from '../../pages/patients'
 import { Table } from 'flowbite-react'
 import { useRouter } from 'next/router'
+import { LayerType } from '../Chart/Chart'
+import Zander from '../../assets/testImages/zanderUpdated.jpeg'
+import JSXStyle from 'styled-jsx/style'
 
 interface TableProps {
   columns: string[]
@@ -36,6 +39,11 @@ const MainTable: React.FC<TableProps> = (props) => {
                 className="bg-white dark:border-gray-700 dark:bg-gray-800"
                 key={data.date + data.id}
               >
+                <Table.Cell>
+                  <img 
+                    src={require('../../assets/testImages/zanderUpdated.jpeg') }
+                  />
+                </Table.Cell>
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                   <a href={'#'} onClick={() => onPatientClick(data)}>
                     {data.name}
@@ -43,6 +51,7 @@ const MainTable: React.FC<TableProps> = (props) => {
                 </Table.Cell>
                 <Table.Cell>{data.id}</Table.Cell>
                 <Table.Cell>{data.date}</Table.Cell>
+                <Table.Cell>{data.time}</Table.Cell>
                 <Table.Cell>{data.doctor}</Table.Cell>
                 <Table.Cell>{data.room}</Table.Cell>
                 <Table.Cell>{data.team}</Table.Cell>

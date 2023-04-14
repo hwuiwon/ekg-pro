@@ -20,7 +20,7 @@ const LayersList = (props: LayersListProps) => {
         <div
           className="LayerButton"
           style={{
-            background: layer.selected ? 'green' : 'gray',
+            background: layer.selected ? 'lightGreen' : 'lightGrey',
           }}
         />
       </div>

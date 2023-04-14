@@ -24,18 +24,23 @@ const MainSidebar: React.FC = () => {
 
         <Sidebar.Items className="space-y-2 font-medium">
           <Sidebar.ItemGroup>
+            <Sidebar.Item href="#">
+              Menu
+            </Sidebar.Item>
             <Sidebar.Item href="#" icon={HiChartPie}>
               Dashboard
             </Sidebar.Item>
             <Sidebar.Item href="#" icon={HiBriefcase}>
               Appointments
             </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiUsers}>
+            <Sidebar.Item href="/patients" icon={HiUsers}>
               Patients
             </Sidebar.Item>
             <Sidebar.Item href="#" icon={HiSearch}>
               Analysis
             </Sidebar.Item>
+            <hr>
+            </hr>
             <Sidebar.Item href="#" icon={HiQuestionMarkCircle}>
               Help
             </Sidebar.Item>
