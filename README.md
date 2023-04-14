@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, run the Next.js development server:
 
 ```bash
 npm run dev
@@ -13,6 +11,17 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Then, in a seperate terminal, run the Django server in order to have the backend connection:
+
+```bash
+cd backend
+python manage.py runserver
+```
+
+The Django connection will be on [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+## Rest of Next.js project README documentation
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
