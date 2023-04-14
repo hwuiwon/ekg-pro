@@ -1,5 +1,12 @@
 ## Getting Started
+# For backend
+Make sure you have the appropriate packages installed for the Django server by doing the following:
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
+## Running the servers for dev environment
 First, run the Next.js development server:
 
 ```bash
